@@ -1,0 +1,330 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="ca">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Menteixanka - Mindfulness per a Nens</title>\
+    <style>\
+        /* Estils generals i colors atractius per a nens */\
+        body \{\
+            font-family: 'Comic Sans MS', cursive, sans-serif;\
+            margin: 0;\
+            padding: 0;\
+            background-color: #f0f9ff;\
+            color: #333;\
+        \}\
+        \
+        .container \{\
+            max-width: 800px;\
+            margin: 0 auto;\
+            padding: 20px;\
+        \}\
+        \
+        header \{\
+            text-align: center;\
+            background: linear-gradient(135deg, #4CAF50, #2196F3);\
+            color: white;\
+            padding: 30px 0;\
+            border-radius: 15px;\
+            margin-bottom: 30px;\
+        \}\
+        \
+        h1 \{\
+            font-size: 2.5rem;\
+            margin: 0;\
+        \}\
+        \
+        .subtitle \{\
+            font-size: 1.2rem;\
+            margin-top: 10px;\
+        \}\
+        \
+        .intro \{\
+            background-color: white;\
+            padding: 20px;\
+            border-radius: 10px;\
+            margin-bottom: 20px;\
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);\
+        \}\
+        \
+        .age-selector \{\
+            display: flex;\
+            justify-content: center;\
+            gap: 10px;\
+            margin: 20px 0;\
+        \}\
+        \
+        .age-btn \{\
+            padding: 10px 15px;\
+            background-color: #FF9800;\
+            color: white;\
+            border: none;\
+            border-radius: 20px;\
+            cursor: pointer;\
+            font-size: 1rem;\
+            transition: all 0.3s;\
+        \}\
+        \
+        .age-btn:hover \{\
+            background-color: #F57C00;\
+            transform: scale(1.05);\
+        \}\
+        \
+        .age-btn.active \{\
+            background-color: #E91E63;\
+        \}\
+        \
+        .techniques-container \{\
+            background-color: white;\
+            padding: 20px;\
+            border-radius: 10px;\
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);\
+            margin-bottom: 20px;\
+        \}\
+        \
+        .technique \{\
+            display: none;\
+            padding: 15px;\
+            background-color: #E8F5E9;\
+            border-radius: 10px;\
+            margin-bottom: 15px;\
+        \}\
+        \
+        .technique.active \{\
+            display: block;\
+            animation: fadeIn 0.5s;\
+        \}\
+        \
+        @keyframes fadeIn \{\
+            from \{ opacity: 0; \}\
+            to \{ opacity: 1; \}\
+        \}\
+        \
+        .timer \{\
+            font-size: 3rem;\
+            text-align: center;\
+            margin: 20px 0;\
+            color: #2196F3;\
+        \}\
+        \
+        .controls \{\
+            display: flex;\
+            justify-content: center;\
+            gap: 10px;\
+            margin-bottom: 20px;\
+        \}\
+        \
+        button \{\
+            padding: 10px 20px;\
+            background-color: #4CAF50;\
+            color: white;\
+            border: none;\
+            border-radius: 20px;\
+            cursor: pointer;\
+            font-size: 1rem;\
+        \}\
+        \
+        button:hover \{\
+            background-color: #45a049;\
+        \}\
+        \
+        footer \{\
+            text-align: center;\
+            margin-top: 30px;\
+            padding: 20px;\
+            color: #666;\
+            font-size: 0.9rem;\
+        \}\
+        \
+        .breathing-animation \{\
+            width: 200px;\
+            height: 200px;\
+            margin: 20px auto;\
+            background: radial-gradient(circle, #B3E5FC 0%, #E1F5FE 100%);\
+            border-radius: 50%;\
+            display: flex;\
+            justify-content: center;\
+            align-items: center;\
+            color: #0288D1;\
+            font-weight: bold;\
+            transition: transform 4s ease-in-out;\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <div class="container">\
+        <header>\
+            <h1>Menteixanka</h1>\
+            <p class="subtitle">Mindfulness i relaxaci\'f3 per a nens i nenes</p>\
+        </header>\
+        \
+        <div class="intro">\
+            <h2>Qu\'e8 \'e9s el mindfulness?</h2>\
+            <p>El mindfulness \'e9s prestar atenci\'f3 al moment present amb curiositat i sense jutjar. Ajuda els nens a con\'e8ixer millor les seves emocions i aprendre a gestionar-les.</p>\
+        </div>\
+        \
+        <div class="age-selector">\
+            <button class="age-btn active" data-age="4-6">4-6 anys</button>\
+            <button class="age-btn" data-age="7-9">7-9 anys</button>\
+            <button class="age-btn" data-age="10-12">10-12 anys</button>\
+        </div>\
+        \
+        <div class="techniques-container">\
+            <h2>T\'e8cniques de mindfulness</h2>\
+            \
+            <!-- T\'e8cnica 1: Respiraci\'f3 conscient -->\
+            <div class="technique active" id="respiracio-conscient">\
+                <h3>1. L'abeleta que respira</h3>\
+                <p>Tapa't les orelles amb les mans i tanca els ulls. Inspira pel nas i deixa sortir el aire fent un brunzit suau com una abella.</p>\
+                <div class="breathing-animation" id="breathing-circle">\
+                    Inspira...\
+                </div>\
+                <div class="controls">\
+                    <button id="start-breathing">Comen\'e7ar</button>\
+                    <button id="stop-breathing" style="display:none;">Aturar</button>\
+                </div>\
+            </div>\
+            \
+            <!-- T\'e8cnica 2: Escaneig corporal -->\
+            <div class="technique" id="escaneig-corporal">\
+                <h3>2. L'explorador del cos</h3>\
+                <p>Tanca els ulls i imagina que tens una llanterna m\'e0gica. Il\'b7lumina cada part del teu cos, del cap als peus, notant com se sent cada part.</p>\
+                <div class="controls">\
+                    <button id="start-body-scan">Comen\'e7ar exploraci\'f3</button>\
+                </div>\
+            </div>\
+            \
+            <!-- T\'e8cnica 3: Atenci\'f3 als sons -->\
+            <div class="technique" id="atencio-sons">\
+                <h3>3. Ca\'e7a de sons</h3>\
+                <p>Tanca els ulls durant 1 minut i compta quants sons diferents pots escoltar a l'entorn.</p>\
+                <div class="timer" id="sound-timer">01:00</div>\
+                <div class="controls">\
+                    <button id="start-sound-hunt">Comen\'e7ar</button>\
+                    <button id="stop-sound-hunt" style="display:none;">Aturar</button>\
+                </div>\
+            </div>\
+        </div>\
+        \
+        <footer>\
+            <p>Aquestes t\'e8cniques estan adaptades per a nens. Recorda practicar amb regularitat per obtenir millors resultats.</p>\
+            <p>Menteixanka - Mindfulness per a la inf\'e0ncia</p>\
+        </footer>\
+    </div>\
+\
+    <script>\
+        // Canviar t\'e8cniques segons l'edat seleccionada\
+        const ageButtons = document.querySelectorAll('.age-btn');\
+        \
+        ageButtons.forEach(button => \{\
+            button.addEventListener('click', function() \{\
+                // Actualitzar bot\'f3 actiu\
+                ageButtons.forEach(btn => btn.classList.remove('active'));\
+                this.classList.add('active');\
+                \
+                // Aqu\'ed es podrien mostrar t\'e8cniques espec\'edfices per edat\
+                // Per simplificat, aquest exemple mant\'e9 les mateixes t\'e8cniques per a totes les edats\
+            \});\
+        \});\
+        \
+        // Timer per a la t\'e8cnica de respiraci\'f3\
+        let breathingInterval;\
+        const breathingCircle = document.getElementById('breathing-circle');\
+        const startBreathingBtn = document.getElementById('start-breathing');\
+        const stopBreathingBtn = document.getElementById('stop-breathing');\
+        \
+        startBreathingBtn.addEventListener('click', function() \{\
+            this.style.display = 'none';\
+            stopBreathingBtn.style.display = 'inline-block';\
+            \
+            let isInhaling = true;\
+            breathingCircle.textContent = "Inspira...";\
+            breathingCircle.style.transform = "scale(1.2)";\
+            \
+            breathingInterval = setInterval(() => \{\
+                if (isInhaling) \{\
+                    breathingCircle.textContent = "Exhala...";\
+                    breathingCircle.style.transform = "scale(1)";\
+                \} else \{\
+                    breathingCircle.textContent = "Inspira...";\
+                    breathingCircle.style.transform = "scale(1.2)";\
+                \}\
+                isInhaling = !isInhaling;\
+            \}, 4000);\
+        \});\
+        \
+        stopBreathingBtn.addEventListener('click', function() \{\
+            this.style.display = 'none';\
+            startBreathingBtn.style.display = 'inline-block';\
+            clearInterval(breathingInterval);\
+            breathingCircle.textContent = "Inspira...";\
+            breathingCircle.style.transform = "scale(1)";\
+        \});\
+        \
+        // Timer per a la ca\'e7a de sons\
+        let soundTimer;\
+        const soundTimerDisplay = document.getElementById('sound-timer');\
+        const startSoundBtn = document.getElementById('start-sound-hunt');\
+        const stopSoundBtn = document.getElementById('stop-sound-hunt');\
+        \
+        startSoundBtn.addEventListener('click', function() \{\
+            this.style.display = 'none';\
+            stopSoundBtn.style.display = 'inline-block';\
+            \
+            let timeLeft = 60; // 1 minut\
+            updateSoundTimer(timeLeft);\
+            \
+            soundTimer = setInterval(() => \{\
+                timeLeft--;\
+                updateSoundTimer(timeLeft);\
+                \
+                if (timeLeft <= 0) \{\
+                    clearInterval(soundTimer);\
+                    alert("Temps finalitzat! Quants sons has escoltat?");\
+                    stopSoundBtn.style.display = 'none';\
+                    startSoundBtn.style.display = 'inline-block';\
+                \}\
+            \}, 1000);\
+        \});\
+        \
+        stopSoundBtn.addEventListener('click', function() \{\
+            this.style.display = 'none';\
+            startSoundBtn.style.display = 'inline-block';\
+            clearInterval(soundTimer);\
+            soundTimerDisplay.textContent = "01:00";\
+        \});\
+        \
+        function updateSoundTimer(seconds) \{\
+            const mins = Math.floor(seconds / 60);\
+            const secs = seconds % 60;\
+            soundTimerDisplay.textContent = `$\{mins.toString().padStart(2, '0')\}:$\{secs.toString().padStart(2, '0')\}`;\
+        \}\
+        \
+        // Exploraci\'f3 corporal (simulada)\
+        const startBodyScanBtn = document.getElementById('start-body-scan');\
+        \
+        startBodyScanBtn.addEventListener('click', function() \{\
+            const bodyParts = ["peus", "cames", "malucs", "est\'f3mac", "pit", "esquena", "bra\'e7os", "mans", "coll", "cara", "cap"];\
+            let currentIndex = 0;\
+            \
+            const scanInterval = setInterval(() => \{\
+                if (currentIndex < bodyParts.length) \{\
+                    alert(`Ara concentra't en els teus $\{bodyParts[currentIndex]\}. Nota com se senten.`);\
+                    currentIndex++;\
+                \} else \{\
+                    clearInterval(scanInterval);\
+                    alert("Exploraci\'f3 completada! Com et sents ara?");\
+                \}\
+            \}, 3000);\
+        \});\
+    </script>\
+</body>\
+</html>\
+}
